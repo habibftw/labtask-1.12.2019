@@ -1,0 +1,216 @@
+<fieldset>
+    <legend><b>REGISTRATION</b></legend>
+	<script type="text/javascript">
+	
+	function f1(){
+	
+	
+	
+	var name = document.getElementById('name').value; 
+		
+	
+		if(name.length >= 2 && name[0] == name[0].toUpperCase()== true)
+		{
+			document.getElementById('n').innerHTML="";
+			f2();
+			
+		}
+		
+		else
+		{
+			//alert('inv name');
+			document.getElementById('n').innerHTML="invalid Name";
+		}
+	
+
+}
+	
+	function f2()
+	{
+	
+		var email = document.getElementById('email').value;
+		
+	
+   
+   if(email.length >= 2 && email.indexOf("@") > 1  &&  email.indexOf(".") > 1  )
+   
+   {    document.getElementById('p').innerHTML="";
+		f3();
+   
+   }
+   else
+		{
+			//alert('inv email');
+			document.getElementById('p').innerHTML="invalid Email";
+		}
+   
+	
+	}
+	
+	
+	
+	
+	function f3()
+	{
+	 var pass = document.getElementById('pass').value;
+	 var cpass = document.getElementById('cpass').value;
+	 
+	 if( pass == cpass)
+	 {
+		checkButton();
+	 }
+	 
+	 else
+	 {
+		alert("no");
+	 }
+	
+	}
+	
+	
+	function checkButton(){
+if(document.form1.gender1.checked == true || document.form1.gender2.checked == true || document.form1.gender3.checked == true)
+
+{
+  document.getElementById('q').innerHTML="";
+  checkdate();
+}
+
+else{
+
+ document.getElementById('q').innerHTML="Please check";}
+ }
+
+ function checkdate()
+ {
+		var d1 = document.getElementById('dob1').value;
+	
+		
+		if ( d1 >= 1 && d1 <=31 )
+		{
+			checkdate2();
+			
+		}
+		
+		else 
+		{
+		alert("nl");
+		}
+		
+ }
+ 
+ function checkdate2()
+ {
+		var d2 = document.getElementById('dob2').value;
+		
+		if ( d2 >= 1 && d2 <=12 )
+		{
+			checkdate3();
+			
+		}
+		
+		else 
+		{
+		alert("nl");
+		}
+		
+ }
+ 
+ function checkdate3()
+ {
+			var d3 =document.getElementById('dob3').value;
+	if ( d3 >= 1900 && d3 <=2079)
+		{
+			checkdate3();
+			
+		}
+		
+		else 
+		{
+		alert("nl");
+		}
+ 
+ }
+	
+	
+	
+	
+	
+		
+		
+
+
+	</script>
+	<form name="form1">
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input name="name" type="text" id="name"></td>
+				<td><p id="n"></p></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td>
+					<input name="email" type="text" id="email">
+					<abbr title="hint: sample@example.com"><b>i</b></abbr>
+				</td>
+				<td><p id="p"></p></</td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>User Name</td>
+				<td>:</td>
+				<td><input name="userName" type="text" id="username"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input name="password" type="password" id="pass"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input name="confirmPassword" type="password" id="cpass"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Gender</legend>    
+						<input name="gender1" type="radio" id="radio" value="male">Male
+						<input name="gender2" type="radio" id="radio" value="female">Female
+						<input name="gender3" type="radio" id="radio" value="other">Other
+					</fieldset>
+				</td>
+				<td><p id="q"></p></</td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Date of Birth</legend>    
+						<input type="text" size="2" id="dob1"/>/
+						<input type="text" size="2" id="dob2"/>/
+						<input type="text" size="4" id="dob3"/>
+						<font size="2"><i>(dd/mm/yyyy)</i></font>
+					</fieldset>
+				</td>
+				<td></td>
+			</tr>
+			<tr><td><p id="demo"> </p> </td></tr>
+			
+		</table>
+		<hr/>
+		<input type="button" value="Submit" onclick="f1()">
+		<input type="reset">
+	</form>
+</fieldset>
